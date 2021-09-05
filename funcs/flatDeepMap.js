@@ -1,0 +1,1 @@
+flatDeepMap = (list, mapper, deep) => flatdeep(list.map(mapper), deep)
