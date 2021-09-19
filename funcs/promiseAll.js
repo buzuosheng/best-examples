@@ -18,4 +18,4 @@ function promiseAll(promises) {
   })
 }
 
-console.log(promiseAll([1,2,3,4]))
+console.log(promiseAll([1, 2, 3, 4]))
