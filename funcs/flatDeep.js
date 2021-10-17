@@ -15,3 +15,13 @@ function flatten(list, depth = 1) {
   if (depth === 0) return list
   return list.reduce((a, b) => a.concat(Array.isArray(b) ? flatten(b, depth - 1) : b), [])
 }
+
+Array.prototype._flatten = function (deep = 1) {
+  if (deep === 0) return this
+  return Array.from(this).reduce((a, b) => {
+    return a.concat(Array.isArray(b) ? b._flatten(deep - 1) : b)
+  }, [])
+}
+
+const a = [1, [[[[2]]]]]
+console.log(a._flatten(5))
